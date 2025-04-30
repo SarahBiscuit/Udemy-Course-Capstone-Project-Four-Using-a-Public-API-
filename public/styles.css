@@ -10,22 +10,27 @@ header {
 
 #fireDiv {
     background-image: url("/images/fire Photo.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-
-  /* Flexbox to center child */
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* Optional minimum height */
+    height: auto;
+    position: relative;
 }
 
 #introTextBox {
     background-color: goldenrod;
-    width: 40%;
+    width: 45%;
+    max-height: 80%;
+    overflow-y: auto;
     padding: 20px;
     text-align: center;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
+
+
 
 /*MAKE SURE WORKS ON DIFFERENT SCREEN SIZES*/
