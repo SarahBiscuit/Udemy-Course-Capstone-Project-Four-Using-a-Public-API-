@@ -13,13 +13,19 @@ header {
   background-size: cover;
   background-position: center;
   height: 300px;
+
+  /* Flexbox to center child */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
 }
 
 #introTextBox {
     background-color: goldenrod;
     width: 40%;
-    height: 100%;
-    
+    padding: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
 /*MAKE SURE WORKS ON DIFFERENT SCREEN SIZES*/
