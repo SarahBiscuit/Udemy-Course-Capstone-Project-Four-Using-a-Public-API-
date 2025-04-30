@@ -13,7 +13,7 @@ app.use(express.static("public"));
 //app.get to render webpage and send the relevant API details to the index.ejs file.//
 app.get("/", async (req, res) => {
     try {
-        const randomId = Math.floor(Math.random() * 2138) + 1;
+        const randomId = Math.floor(Math.random() * 2134) + 1;
         const response = await axios.get(`https://anapioficeandfire.com/api/characters/${randomId}`);
 
         const character = response.data;
