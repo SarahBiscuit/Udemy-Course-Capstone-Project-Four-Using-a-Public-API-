@@ -1,4 +1,8 @@
+body {
+    font-family: eb garamond, merriweather, cormorant garibond;
+
 header {
     background-color: black;
-    color: yellow;
+    color: gold;
+    text-align: center;
 }
