@@ -1,8 +1,25 @@
 body {
-    font-family: eb garamond, merriweather, cormorant garibond;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
 
 header {
     background-color: black;
     color: gold;
     text-align: center;
 }
+
+#fireDiv {
+    background-image: url("/images/fire Photo.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+
+#introTextBox {
+    background-color: goldenrod;
+    width: 40%;
+    height: 100%;
+    
+}
+
+/*MAKE SURE WORKS ON DIFFERENT SCREEN SIZES*/
