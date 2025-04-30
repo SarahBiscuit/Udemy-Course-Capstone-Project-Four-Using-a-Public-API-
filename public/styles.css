@@ -31,6 +31,9 @@ header {
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
+#charButton {
+    background-color: black;
+    color: white;
+}
 
-
-/*MAKE SURE WORKS ON DIFFERENT SCREEN SIZES*/
+/*MAKE SURE WORKS ON DIFFERENT SCREEN SIZES.  NEED TO DO THINGS LIKE SHRINKING TEXT FOR SMALLER SCREENS*/
