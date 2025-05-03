@@ -19,11 +19,11 @@
     <% if (!characterData || !characterData.name) { %>
      <h2><span><b>Character not yet generated</b></span></h2> 
      <% } else { %>
-        <li><h6><span><b>Name:</b></span> <%= characterData.name %></h6></li>
-        <li><h6><span><b>Gender:</b></span> <%= characterData.gender %></h6></li>
-        <li><h6><span><b>Born:</b></span> <%= characterData.DOB %></h6></li>
-        <li><h6><span><b>Died:</b></span> <%= characterData.died %></h6></li>
-        <li><h6><span><b>Aliases:</b></span> <%= characterData.nicknames.join(", ") %></h6></li>
+        <p class="characterInfo"><h6><span><b>Name:</b></span> <%= characterData.name %></h6></p>
+        <p class="characterInfo"><h6><span><b>Gender:</b></span> <%= characterData.gender %></h6></p>
+        <p class="characterInfo"><h6><span><b>Born:</b></span> <%= characterData.DOB %></h6></p>
+        <p class="characterInfo"><h6><span><b>Died:</b></span> <%= characterData.died %></h6></p>
+        <p class="characterInfo"><h6><span><b>Aliases:</b></span> <%= characterData.nicknames.join(", ") %></h6></p>
         <% } %> 
 </div>
 </div>
