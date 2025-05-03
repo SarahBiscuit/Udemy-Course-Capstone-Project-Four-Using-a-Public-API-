@@ -14,7 +14,7 @@ const validCharacterIds = [27, 33, 34, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 4
 
 //app.get to render webpage, initially wihtout character.//
 app.get("/", (req, res) => {
-  res.render("index.ejs", {characterData: null}); 
+  res.render("index.ejs", { characterData: null });
 });
 
 async function generateCharacter() {
