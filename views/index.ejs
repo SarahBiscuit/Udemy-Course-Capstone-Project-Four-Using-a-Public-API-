@@ -15,9 +15,15 @@
 <div id="characterDiv">
 <div id="characterScreen">
     <!-- placeholder text here for before character is generated, and then box populated when the character is generated. -->
-     <% if (!locals.character) %>
+     <% if (!locals.character) { %>
      <h2><span><b>Character not yet generated</b></span></h2> 
-     <% else %>
-     <li></li>
+     <% } else { %>
+     <li><h6><span><b>Name:</b></span> <%= name %></h6></li>
+     <li><h6><span><b>Gender:</b></span> <%= gender %></h6></li>
+     <li><h6><span><b>Born:</b></span> <%= DOB %></h6></li>
+     <li><h6><span><b>Died:</b></span> <%= died %></h6></li>
+     <li><h6><span><b>Aliases:</b></span> <%= nicknames.join(", ") %></h6></li>
+     };
+
 </div>
 </div>
