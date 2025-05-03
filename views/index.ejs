@@ -6,7 +6,10 @@
         <h5>Up your skills</h5>
         <h5>Do you know your game of thrones characters?</h5>
         <h5>Click on the 'Generate' button to generate a character in the box below</h5>
-        <button id="charButton">Generate</button>
+        <!-- 'Generate' button embedded in a form. -->
+        <form action="/" method="POST">
+            <button id="charButton" type="submit">Generate</button>
+        </form>
         <!-- Now need to add the functionality in the index.js to pull from the API and generate the character.  Will have an ice photo below 
          and add a box generating the character details on top of it.-->
     </div>
@@ -23,7 +26,7 @@
      <li><h6><span><b>Born:</b></span> <%= DOB %></h6></li>
      <li><h6><span><b>Died:</b></span> <%= died %></h6></li>
      <li><h6><span><b>Aliases:</b></span> <%= nicknames.join(", ") %></h6></li>
-     };
+     }
 
 </div>
 </div>
