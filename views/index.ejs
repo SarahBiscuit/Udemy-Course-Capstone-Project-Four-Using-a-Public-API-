@@ -2,13 +2,22 @@
 
 <div id="fireDiv">
     <div id="introTextBox">
-        <!-- Going to add a yellow background box here and superimpose what I have put below on top of it.-->
         <h2><span><b>Fire</b></span></h2>
         <h5>Up your skills</h5>
         <h5>Do you know your game of thrones characters?</h5>
-        <h5>Click on the button below to generate a character</h5>
+        <h5>Click on the 'Generate' button to generate a character in the box below</h5>
         <button id="charButton">Generate</button>
         <!-- Now need to add the functionality in the index.js to pull from the API and generate the character.  Will have an ice photo below 
          and add a box generating the character details on top of it.-->
     </div>
+</div>
+
+<div id="characterDiv">
+<div id="characterScreen">
+    <!-- placeholder text here for before character is generated, and then box populated when the character is generated. -->
+     <% if (!locals.character) %>
+     <h2><span><b>Character not yet generated</b></span></h2> 
+     <% else %>
+     <li></li>
+</div>
 </div>
