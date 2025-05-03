@@ -21,6 +21,19 @@ header {
     position: relative;
 }
 
+#iceDiv {
+    background-image: url("/images/ice Photo.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* Optional minimum height */
+    height: auto;
+    position: relative;
+}
+
 #characterDiv {
     background-color: black;
     background-size: cover;
