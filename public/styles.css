@@ -22,7 +22,7 @@ header {
 }
 
 #iceDiv {
-    background-image: url("/images/ice Photo.jpg");
+    background-image: url("/images/Black Ice Photo.jpg");
     background-size: cover;
     background-position: center;
     padding: 20px;
@@ -58,6 +58,16 @@ header {
 }
 
 #characterScreen {
+    background-color: goldenrod;
+    width: 45%;
+    max-height: 80%;
+    overflow-y: auto;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+#userInputScreen {
     background-color: goldenrod;
     width: 45%;
     max-height: 80%;
