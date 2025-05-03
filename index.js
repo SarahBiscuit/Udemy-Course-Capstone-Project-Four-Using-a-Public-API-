@@ -10,25 +10,44 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static("public"));  
 
-//app.get to render webpage and send the relevant API details to the index.ejs file.//
-app.get("/", async (req, res) => {
-    try {
-        const randomId = Math.floor(Math.random() * 2134) + 1;
-        const response = await axios.get(`https://anapioficeandfire.com/api/characters/${randomId}`);
+//app.get to render webpage, initially wihtout character.//
+app.get("/", (req, res) => {
+  res.render("index.ejs", {characterData: null}); 
+});
 
-        const character = response.data;
+async function generateCharacter() {
+  const baseUrl = "https://anapioficeandfire.com/api/characters";
 
-        res.render("index.ejs", {
-            name: character.name || " ",
-            gender: character.gender || " ",
-            DOB: character.born || " ",
-            died: character.died || " ",
-            nicknames: character.aliases.length > 0 ? character.aliases : ["None"]
-          });
+  //Works out total number of characters in the API//
+  const countRes = await axios.get(`${baseUrl}?page=1&pageSize=1`);
+  const totalIds = parseInt(countRes.headers["x-total-count"], 10);
 
-} catch (error) {
-    console.error("API fetch failed:", error.message);
-    res.status(500).send("Something went wrong.");
+  let character = null;
+
+  // Loop until you get a character with a name //
+  while (!character || !character.name) {
+    const randomCharacter = Math.floor(Math.random() * totalIds) + 1;
+    const response = await axios.get(`${baseUrl}/${randomCharacter}`);
+    character = response.data;
+}
+
+//Returns a character//
+return {
+  name: character.name || "Unknown",
+  gender: character.gender || "Unknown",
+  DOB: character.born || "Unknown",
+  died: character.died || "Unknown",
+  nicknames: character.aliases.length > 0 ? character.aliases : ["None"]
+};
+}
+
+app.post("/", async (req, res) => {
+  try {
+      const characterData = await generateCharacter();
+      res.render("index.ejs", { characterData });
+  } catch (error) {
+      console.error("API fetch failed:", error.message);
+      res.status(500).send("Error in fetching API.");
   }
 });
 
