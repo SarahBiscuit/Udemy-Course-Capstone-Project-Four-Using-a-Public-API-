@@ -82,6 +82,12 @@ header {
     color: white;
 }
 
+#userFact input[type="text"] {
+    width: 80%; /* or any other value like 100%, 300px, etc. */
+    padding: 8px;
+    font-size: 1rem;
+}
+
 .characterInfo {
     text-align: left;
 }
