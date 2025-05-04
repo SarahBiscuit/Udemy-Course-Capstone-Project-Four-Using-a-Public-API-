@@ -92,4 +92,13 @@ header {
     text-align: left;
 }
 
+.custom-navbar {
+    background-color: goldenrod;
+    color: black; 
+}
+
+.custom-navbar .navbar-nav .nav-link {
+    color: black; 
+}
+
 /*MAKE SURE WORKS ON DIFFERENT SCREEN SIZES.  NEED TO DO THINGS LIKE SHRINKING TEXT FOR SMALLER SCREENS*/
