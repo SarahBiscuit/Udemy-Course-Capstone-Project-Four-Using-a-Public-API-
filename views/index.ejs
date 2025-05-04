@@ -25,6 +25,10 @@
         <p class="characterInfo"><h6><span><b>Born:</b></span> <%= characterData.DOB %></h6></p>
         <p class="characterInfo"><h6><span><b>Died:</b></span> <%= characterData.died %></h6></p>
         <p class="characterInfo"><h6><span><b>Aliases:</b></span> <%= characterData.nicknames.join(", ") %></h6></p>
+        <p class="characterInfo"><h6><span><b>User's Fact:</b></span>
+        <% if (locals.fact) { %>
+            <h6><%= fact %></h6></p>
+        <% } %>
         <% } %> 
 </div>
 </div>
