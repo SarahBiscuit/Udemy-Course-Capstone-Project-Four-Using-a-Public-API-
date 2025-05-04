@@ -95,10 +95,23 @@ header {
 .custom-navbar {
     background-color: goldenrod;
     color: black; 
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.custom-navbar .navbar-collapse {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.custom-navbar .navbar-nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%; /* Ensure the navbar items take up the full space */
 }
 
 .custom-navbar .navbar-nav .nav-link {
-    color: black; 
+    color: black;
 }
 
 /*MAKE SURE WORKS ON DIFFERENT SCREEN SIZES.  NEED TO DO THINGS LIKE SHRINKING TEXT FOR SMALLER SCREENS*/
