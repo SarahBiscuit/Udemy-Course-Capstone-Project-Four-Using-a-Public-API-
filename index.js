@@ -51,18 +51,31 @@ async function generateCharacter() {
   };
 }
 
-app.post("/", async (req, res) => {
-  try {
-      const characterData = await generateCharacter();
-      res.render("index.ejs", { characterData });
-  } catch (error) {
-    console.error("API fetch failed:", error);
-    res.status(500).send("Error in fetching API.");
-  }
+//For submitting user fact and sending it back to index.ejs//
+app.post("/submit", (req, res) => {
+  const userFact = req.body.fact;
+//Sends over the current character data so it is not lost when the user submits a fact//
+  const characterData = {
+    name: req.body.name,
+    gender: req.body.gender,
+    DOB: req.body.DOB,
+    died: req.body.died,
+    nicknames: req.body.nicknames ? req.body.nicknames.split(",") : ["None"]
+  };
+
+  res.render("index.ejs", {
+    characterData,
+    userFact
+  });
 });
 
-//app.post to pull in the user form input and send it to the index.ejs file so that it can display on the screen//
-//When a user presses the generate new character button, I need their form post to clear as well.//
+app.post("/submit", async (req, res) => {
+  const userFact = req.body.fact;
+
+  res.render('index.ejs', {
+      userFact: userFact,
+  });
+});
 
 app.listen(3000, () => {
     console.log("Server running on port 3000.");
