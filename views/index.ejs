@@ -25,9 +25,9 @@
         <p class="characterInfo"><h6><span><b>Born:</b></span> <%= characterData.DOB %></h6></p>
         <p class="characterInfo"><h6><span><b>Died:</b></span> <%= characterData.died %></h6></p>
         <p class="characterInfo"><h6><span><b>Aliases:</b></span> <%= characterData.nicknames.join(", ") %></h6></p>
-        <p class="characterInfo"><h6><span><b>User's Fact:</b></span>
-        <% if (locals.fact) { %>
-            <h6><%= fact %></h6></p>
+        <% if (locals.userFact) { %>
+            <p class="characterInfo"><h6><span><b>User's Fact:</b></span>
+            <%= userFact %></h6></p>
         <% } %>
         <% } %> 
 </div>
@@ -47,6 +47,16 @@
         <form action="/submit" method="POST">
             <h4><span><b><label for="fact">Fact:</label></b></span></h4>
             <input type="text" id="fact" name="fact" required>
+
+            <!-- Hidden inputs to preserve character info -->
+  <% if (characterData) { %>
+    <input type="hidden" name="name" value="<%= characterData.name %>">
+    <input type="hidden" name="gender" value="<%= characterData.gender %>">
+    <input type="hidden" name="DOB" value="<%= characterData.DOB %>">
+    <input type="hidden" name="died" value="<%= characterData.died %>">
+    <input type="hidden" name="nicknames" value="<%= characterData.nicknames.join(",") %>">
+  <% } %>
+
         </br>
         </br>
             <button class="charButton" type="submit">Submit</button>
