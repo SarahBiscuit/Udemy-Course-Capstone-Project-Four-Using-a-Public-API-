@@ -51,6 +51,20 @@ async function generateCharacter() {
   };
 }
 
+// POST / - Generate new character
+app.post("/", async (req, res) => {
+  try {
+    const characterData = await generateCharacter();
+    res.render("index.ejs", {
+      characterData,
+      userFact: null // Clear any old fact
+    });
+  } catch (error) {
+    console.error("Error generating character:", error);
+    res.status(500).send("Something went wrong.");
+  }
+});
+
 //For submitting user fact and sending it back to index.ejs//
 app.post("/submit", (req, res) => {
   const userFact = req.body.fact;
@@ -66,14 +80,6 @@ app.post("/submit", (req, res) => {
   res.render("index.ejs", {
     characterData,
     userFact
-  });
-});
-
-app.post("/submit", async (req, res) => {
-  const userFact = req.body.fact;
-
-  res.render('index.ejs', {
-      userFact: userFact,
   });
 });
 
