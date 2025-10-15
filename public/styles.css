@@ -9,7 +9,7 @@ header {
 }
 
 #fireDiv {
-    background-image: url("/images/firePhoto.jpg");
+    background-image: url("/images/FirePhoto.jpg");
     background-size: cover;
     background-position: center;
     padding: 20px;
@@ -22,7 +22,7 @@ header {
 }
 
 #iceDiv {
-    background-image: url("/images/Black Ice Photo.jpg");
+    background-image: url("/images/BlackIcePhoto.jpg");
     background-size: cover;
     background-position: center;
     padding: 20px;
