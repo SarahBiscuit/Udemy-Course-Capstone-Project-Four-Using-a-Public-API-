@@ -15,7 +15,7 @@ const validCharacterIds = [27, 33, 34, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 4
 
 //app.get to render webpage, initially without character.//
 app.get("/", (req, res) => {
-  res.render("index.ejs", { characterData: null });
+  res.render("index", { characterData: null });
 });
 
 //Async function to fetch API and pick random in??
@@ -57,7 +57,7 @@ async function generateCharacter() {
 app.post("/", async (req, res) => {
   try {
     const characterData = await generateCharacter();
-    res.render("index.ejs", {
+    res.render("index", {
       characterData,
       userFact: null // Clear any old fact
     });
