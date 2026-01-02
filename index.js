@@ -6,7 +6,11 @@ const app = express();
 
 app.set("view engine", "ejs");
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true,
+  limit: '50kb',
+  parameterLimit: 1000
+}));
 
 app.use(express.static("public"));  
 
